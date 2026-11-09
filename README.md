@@ -113,3 +113,7 @@ curl -X POST http://localhost:8000/api/bookings \
 ```
 
 Лог созданных броней пишется в `storage/logs/bookings.log`.
+
+## Запуск проекта в 1 команду
+1. Перейдите в корень проекта: `cd /test-rcsi`
+2. Запустите проект в одной команде(сборка+миграции+сидеры+тесты): `docker compose up -d --wait && docker compose exec app php artisan migrate:fresh --seed && docker compose exec app php artisan test`
